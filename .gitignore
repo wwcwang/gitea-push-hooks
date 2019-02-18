@@ -1,0 +1,3 @@
+conf/*
+.env
+.trans_remote.sh

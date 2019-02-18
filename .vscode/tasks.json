@@ -1,0 +1,62 @@
+{
+	"version": "2.0.0",
+	"presentation": {
+		"reveal": "always",
+		// "panel": "new",
+		"focus" : true
+	},
+	"command" : "${workspaceRoot}/.trans_remote.sh",
+	"args" : [ "'${file}'" ],
+	"options" : {
+		"env" : {
+			"PROJECT_ROOT" : "${workspaceRoot}"
+		}
+	},
+	"osx" : {
+		"type" : "shell",
+		"options" : {
+			"env" : {
+                "HOST_OS" : "OSX",
+			}
+		}
+
+	}, 
+	"linux" : {
+		"type" : "shell",
+		"options" : {
+			"env" : {
+				"HOST_OS" : "LINUX" 
+			}
+		}
+
+	},
+	"windows" : {
+		"type" : "process",
+		"command": "bash.exe",
+		"options" : {
+			"env" : {
+				"HOST_OS" : "WINDOWS",
+
+			}
+		}
+	},
+
+	"tasks": [
+		{
+			"label": "single",
+			"group": "test",
+			"presentation": {
+				"clear": true
+			}
+		},
+		{
+			"label": "all",
+			"group": "build",
+			"problemMatcher": [],
+			"presentation": {
+				"clear": true
+			}
+		},
+}
+	]
+}
